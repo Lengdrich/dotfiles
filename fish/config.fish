@@ -10,4 +10,5 @@ abbr -a ll exa -l
 abbr -a lla exa -la
 abbr -a find fd
 # abbr -a proxy export ALL_PROXY="http://:7890"
-abbr -a proxy sh ~/dotfiles/proxy.sh
+abbr -a proxy1 sh ~/dotfiles/proxy1.sh
+abbr -a proxy2 sh ~/dotfiles/proxy2.sh
