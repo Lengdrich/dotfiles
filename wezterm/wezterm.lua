@@ -47,7 +47,7 @@ local config = {
         -- "LXGW WenKai Mono",
         {family = "Lxgw WenKai Mono Latin", weight = 'Bold', italic = false},
         {family = "LXGW WenKai Mono", weight = 'Bold', italic = false},
-        "FiraCode Nerd Font",
+        {family = "FiraCode Nerd Font", weight = 'Bold', italic = false },
     }),
     font_size = 14.0,
 
