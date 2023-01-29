@@ -5,7 +5,10 @@ SETUVAR _fish_abbr_find:fd
 SETUVAR _fish_abbr_ll:exa\x20\x2dl
 SETUVAR _fish_abbr_lla:exa\x20\x2dla
 SETUVAR _fish_abbr_ls:exa
-SETUVAR _fish_abbr_proxy:sh\x20/home/ethan/dotfiles/proxy\x2esh
+SETUVAR _fish_abbr_proxy:export\x20ALL_PROXY\x3dhttp\x3a//192\x2e168\x2e1\x2e6\x3a7890
+SETUVAR _fish_abbr_proxy1:sh\x20/home/ethan/dotfiles/proxy1\x2esh
+SETUVAR _fish_abbr_proxy2:sh\x20/home/ethan/dotfiles/proxy2\x2esh
+SETUVAR _fish_abbr_proxy3:sh\x20/home/ethan/dotfiles/proxy3\x2esh
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
