@@ -45,13 +45,15 @@ local config = {
     font = wezterm.font_with_fallback({
         -- "Lxgw WenKai Mono Latin", 
         -- "LXGW WenKai Mono",
-        {family = "Lxgw WenKai Mono Latin", weight = 'Bold', italic = false},
+        -- {family = "Liga MonacoB", weight = 'Regular', italic = false},
+        {family = "Liga Lxgw WenKai Mono Latin", weight = 'Bold', italic = false},
+        -- {family = "Lxgw WenKai Mono Latin", weight = 'Bold', italic = false},
         {family = "LXGW WenKai Mono", weight = 'Bold', italic = false},
         {family = "FiraCode Nerd Font", weight = 'Bold', italic = false },
     }),
     font_size = 14.0,
 
-    default_prog = { 'pwsh' },
+    default_prog = { 'fish' },
     -- default_cwd = "/some/path",
     launch_menu = {
 
