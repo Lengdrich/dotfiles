@@ -41,17 +41,24 @@ local config = {
     },
 
     -- font = wezterm.font('Lxgw Wenkai Mono Latin', {weight = 'Bold', italic = false}),
-
     font = wezterm.font_with_fallback({
-        -- "Lxgw WenKai Mono Latin", 
-        -- "LXGW WenKai Mono",
-        -- {family = "Liga MonacoB", weight = 'Regular', italic = false},
-        {family = "Liga Lxgw WenKai Mono Latin", weight = 'Bold', italic = false},
-        -- {family = "Lxgw WenKai Mono Latin", weight = 'Bold', italic = false},
-        {family = "LXGW WenKai Mono", weight = 'Bold', italic = false},
-        {family = "FiraCode Nerd Font", weight = 'Bold', italic = false },
+        { family = "Liga Lxgw WenKai Mono Latin", weight = 'Bold' },
+        'LXGW WenKai Mono',
+        'FiraCode Nerd Font',
     }),
     font_size = 14.0,
+    font_rules = {
+      {
+        italic = true,
+        intensity = "Normal",
+        font = wezterm.font({
+          family = 'Maple Mono',
+          style = 'Italic',
+        }),
+      },
+    },
+
+    -- default_cursor_style = 'BlinkingBlock',
 
     default_prog = { 'fish' },
     -- default_cwd = "/some/path",
@@ -59,49 +66,7 @@ local config = {
 
     },
 
-    -- leader = { key = "b", mods = "CTRL" },
     set_environment_variables = {},
-
-    -- Tab bar appearance
-    -- colors = {
-    --     tab_bar = {
-
-    --         -- The color of the strip that goes along the top of the window
-    --         background = "#282828",
-
-    --         -- The active tab is the one that has focus in the window
-    --         active_tab = {
-    --             -- The color of the background area for the tab
-    --             bg_color = "#18131e",
-    --             -- The color of the text for the tab
-    --             fg_color = "#ff65fd",
-
-    --             intensity = "Normal",
-    --             underline = "None",
-    --             italic = false,
-    --             strikethrough = false,
-    --         },
-
-    --         -- Inactive tabs are the tabs that do not have focus
-    --         inactive_tab = {
-    --             bg_color = "#282828",
-    --             fg_color = "#d19afc",
-    --         },
-    --         inactive_tab_hover = {
-    --             bg_color = "#202020",
-    --             fg_color = "#ff65fd",
-    --         },
-
-    --         new_tab = {
-    --             bg_color = "#282828",
-    --             fg_color = "#d19afc",
-    --         },
-    --         new_tab_hover = {
-    --             bg_color = "#18131e",
-    --             fg_color = "#ff65fd",
-    --         },
-    --     },
-    -- },
 
     -- set default theme to dracula official conf
     -- colors = dracula,

@@ -10,6 +10,7 @@ set PATH $HOME/.cargo/bin $PATH
 set PATH $HOME/.npm-global/bin $PATH
 set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
 set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
+set -x rime_dir "$HOME/.config/fcitx/rime"
 
 abbr -a ls exa
 abbr -a ll exa -l
