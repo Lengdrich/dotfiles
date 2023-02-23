@@ -25,7 +25,7 @@ local config = {
     -- color_scheme = "lovelace",
 
     colors = {
-        cursor_bg = '#FF69B4',
+        cursor_bg = '#ffc0cb',
         -- Overrides the text color when the current cell is occupied by the cursor
         cursor_fg = 'black',
     },
