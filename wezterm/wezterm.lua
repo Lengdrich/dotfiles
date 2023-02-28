@@ -60,7 +60,7 @@ local config = {
 
     -- default_cursor_style = 'BlinkingBlock',
 
-    default_prog = { 'fish' },
+    default_prog = { 'zsh' },
     -- default_cwd = "/some/path",
     launch_menu = {
 
