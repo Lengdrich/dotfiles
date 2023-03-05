@@ -27,11 +27,17 @@ zmodule utility
 zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
 zmodule git-info
+
+#
+# Themes
+#
+
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 # zmodule asciiship
 zmodule prompt-pwd
 # zmodule minimal
-zmodule gitster
+# zmodule gitster
+zmodule romkatv/powerlevel10k --use degit
 
 #
 # Completion
