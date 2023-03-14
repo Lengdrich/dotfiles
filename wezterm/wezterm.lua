@@ -14,12 +14,13 @@ local wezterm = require("wezterm");
 
 local config = {
   -- check_for_updates = true,
+  -- color_scheme = "Dracula(Gogh)",
   -- color_scheme = "Fahrenheit",
   -- color_scheme = "Gruvbox Dark",
-  -- color_scheme = "Blue Matrix",
+  color_scheme = "Blue Matrix",
   -- color_scheme = "Pandora",
   -- color_scheme = "Grape",
-  color_scheme = "Firewatch",
+  -- color_scheme = "Firewatch",
   -- color_scheme = "Duotone Dark",
   -- color_scheme = "Sakura",
   -- color_scheme = "lovelace",
@@ -33,35 +34,31 @@ local config = {
   enable_scroll_bar = true,
   exit_behavior = "Close",
 
-  -- tab_bar_at_bottom = true,
   inactive_pane_hsb = {
     hue = 1.0,
     saturation = 1.0,
     brightness = 1.0,
   },
 
-  -- font = wezterm.font('Lxgw Wenkai Mono Latin', {weight = 'Bold', italic = false}),
   font = wezterm.font_with_fallback({
+    -- 'Rec Mono Custom',
     'Monaco Nerd Font',
-    -- 'Hasklig',
     -- 'Liga MonacoB',
-    { family = "Liga Lxgw WenKai Mono Latin", weight = 'Bold' },
-    'LXGW WenKai Mono',
+    -- { family = "Liga Lxgw WenKai Mono Latin", weight = 'Bold' },
+    { family = 'LXGW WenKai Mono', weight = 'Bold'},
     'FiraCode Nerd Font',
   }),
   font_size = 12.0,
-  font_rules = {
-    {
-      italic = true,
-      intensity = "Normal",
-      font = wezterm.font({
-        family = 'Maple Mono',
-        style = 'Italic',
-      }),
-    },
-  },
-
-  -- default_cursor_style = 'BlinkingBlock',
+  -- font_rules = {
+  --   {
+  --     italic = true,
+  --     intensity = "Normal",
+  --     font = wezterm.font({
+  --       family = 'Maple Mono',
+  --       style = 'Italic',
+  --     }),
+  --   },
+  -- },
 
   default_prog = { 'fish' },
   -- default_cwd = "/some/path",
@@ -71,10 +68,8 @@ local config = {
 
   set_environment_variables = {},
 
-  -- set default theme to dracula official conf
-  -- colors = dracula,
   tab_bar_at_bottom = true,
-  use_fancy_tab_bar = true
+  use_fancy_tab_bar = true,
 }
 
 return config

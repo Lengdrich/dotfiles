@@ -8,6 +8,10 @@ set PATH $HOME/.local/bin/lua-language-server $PATH
 set PATH $HOME/.local/bin/lua-language-server/bin/ $PATH
 set PATH $HOME/.cargo/bin $PATH
 set PATH $HOME/.npm-global/bin $PATH
+set PATH /usr/local/sqlite/bin/ $PATH
+set PATH /usr/local/sqlite/lib/ $PATH
+set PATH $HOME/.config/emacs/bin/ $PATH
+
 set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
 set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
 set -x rime_dir "$HOME/.config/fcitx/rime"
@@ -18,6 +22,7 @@ abbr -a ll exa -l
 abbr -a lla exa -la
 abbr -a find fd
 abbr -a cat bat
+abbr -a cls clear
 # abbr -a proxy export ALL_PROXY="http://:7890"
 abbr -a proxy export ALL_PROXY="http://192.168.1.6:7890"
 abbr -a proxy1 sh ~/dotfiles/proxy1.sh
