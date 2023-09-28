@@ -16,9 +16,10 @@ set PATH /opt/homebrew/bin/ $PATH
 set -x rime_dir "$HOME/.config/fcitx/rime"
 set -x STARSHIP_CONFIG "$HOME/.config/starship/fish.toml"
 
-abbr -a ls exa
-abbr -a ll exa -l
-abbr -a lla exa -la
+abbr -a ls lsd
+abbr -a ll lsd -l
+abbr -a lla lsd -la
+abbr -a lt lsd --tree
 abbr -a find fd
 abbr -a cat bat
 abbr -a vim nvim

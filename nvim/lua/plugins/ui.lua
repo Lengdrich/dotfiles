@@ -67,4 +67,27 @@ return {
     -- this is no required but if you want indent blanklink line this is needed
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
+
+  -- {
+  --   "glepnir/dashboard-nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("dashboard").setup({
+  --       -- config
+  --       disable_move = true,
+  --       shortcut = {
+  --         { desc = "[  Github]", group = "DashboardShortCut" },
+  --         { desc = "[  lengdrich]", group = "DashboardShortCut" },
+  --         -- { desc = "[  0.2.3]", group = "DashboardShortCut" },
+  --       },
+  --       preview = {
+  --         command = "cat", -- preview command
+  --         file_path = vim.fn.stdpath("config") .. "/static/neovim.cat", -- preview file path
+  --         file_height = 10, -- preview file height
+  --         file_width = 70, -- preview file width
+  --       },
+  --     })
+  --   end,
+  --   dependencies = { { "nvim-tree/nvim-web-devicons" } },
+  -- },
 }

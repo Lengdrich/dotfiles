@@ -66,6 +66,9 @@ return {
   {
     "nvimdev/guard.nvim",
     -- dev = true,
+    dependencies = {
+        "nvimdev/guard-collection",
+    },
     ft = { "c", "cpp", "rust", "lua", "go", "typescript", "javascript", "javascriptreact" },
     config = function()
       local ft = require("guard.filetype")

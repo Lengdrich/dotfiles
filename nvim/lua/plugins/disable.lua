@@ -23,4 +23,11 @@ return {
   { "echasnovski/mini.indentscope", enabled = false },
   { "akinsho/bufferline.nvim", enabled = false },
   { "folke/tokyonight.nvim", enabled = false },
+  { "jose-elias-alvarez/null-ls.nvim", enabled = false },
+  { "echasnovski/mini.bufremove", enabled = false },
+  { "folke/persistence.nvim", enabled = false },
+  { "folke/neodev.nvim", enabled = false },
+  -- { "nvim-treesitter/nvim-treesitter", enabled = false },
+  -- { "folke/noice.nvim", enabled = false },
+  -- { "catppuccin/catppuccin", enabled = false },
 }

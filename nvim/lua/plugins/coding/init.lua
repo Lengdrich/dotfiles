@@ -10,6 +10,7 @@ local enable_lsp_filetype = {
   "typescriptreact",
   "json",
   "vue",
+  "html",
 }
 
 local cmd = function(str)

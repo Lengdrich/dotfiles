@@ -101,24 +101,39 @@ lspconfig.rust_analyzer.setup({
           enable = true,
         },
       },
+      -- Add clippy lints for Rust.
+      checkOnSave = {
+        allFeatures = true,
+        command = "clippy",
+        extraArgs = { "--no-deps" },
+      },
       procMacro = {
         enable = true,
+        ignored = {
+          ["async-trait"] = { "async_trait" },
+          ["napi-derive"] = { "napi" },
+          ["async-recursion"] = { "async_recursion" },
+        },
       },
     },
   },
 })
 
-lspconfig.volar.setup({
-  filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
+local front_ft = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "html" }
+
+lspconfig.vuels.setup({
+  filetype = front_ft,
 })
+
+-- lspconfig.volar.setup({
+--   filetype = front_ft,
+-- })
 
 local servers = {
   "dockerls",
   "pyright",
   "bashls",
   "zls",
-  -- "jsonls",
-  -- "tsserver",
 }
 
 for _, server in ipairs(servers) do
