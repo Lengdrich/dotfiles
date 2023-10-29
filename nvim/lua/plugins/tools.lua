@@ -67,14 +67,14 @@ return {
     "nvimdev/guard.nvim",
     -- dev = true,
     dependencies = {
-        "nvimdev/guard-collection",
+      "nvimdev/guard-collection",
     },
     ft = { "c", "cpp", "rust", "lua", "go", "typescript", "javascript", "javascriptreact" },
     config = function()
       local ft = require("guard.filetype")
-      ft("c"):fmt("clang-format")
+      ft("c"):fmt("clang-format"):lint("clang-tidy")
       -- ft("cpp"):fmt("clang-format"):lint("clang-tidy")
-      ft("cpp"):fmt("clang-format")
+      ft("cpp"):fmt("clang-format"):lint("clang-tidy")
       ft("lua"):fmt("stylua")
       ft("go"):fmt("lsp"):append("golines")
       ft("rust"):fmt("rustfmt")

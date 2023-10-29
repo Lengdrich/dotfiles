@@ -10,6 +10,7 @@ set PATH $HOME/.npm-global/bin $PATH
 set PATH /usr/local/sqlite/bin/ $PATH
 set PATH /usr/local/sqlite/lib/ $PATH
 set PATH /opt/homebrew/bin/ $PATH
+set PATH $HOME/.local/nvim-macos/bin/ $PATH
 
 # set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
 # set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
