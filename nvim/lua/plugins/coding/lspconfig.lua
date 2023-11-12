@@ -1,8 +1,11 @@
+-- local M = {}
 local lspconfig = require("lspconfig")
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+-- capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
 
 local signs = {
   Error = " ",

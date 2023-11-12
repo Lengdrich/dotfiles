@@ -62,6 +62,29 @@ return {
       })
     end,
   },
+  -- {
+  --   "aserowy/tmux.nvim",
+  --   config = function()
+  --     return require("tmux").setup({
+  --       navigation = {
+  --         -- cycles to opposite pane while navigating into the border
+  --         cycle_navigation = false,
+  --
+  --         -- enables default keybindings (C-hjkl) for normal mode
+  --         enable_default_keybindings = true,
+  --
+  --         -- prevents unzoom tmux when navigating beyond vim border
+  --         persist_zoom = false,
+  --       },
+  --       copy_sync = {
+  --         enable = true,
+  --       },
+  --       resize = {
+  --         enable_default_keybindings = false,
+  --       },
+  --     })
+  --   end,
+  -- },
 
   {
     "nvimdev/guard.nvim",

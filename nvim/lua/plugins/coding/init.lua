@@ -32,7 +32,9 @@ return {
       }
     end,
     config = function()
+      -- return {
       require("plugins.coding.lspconfig")
+      -- }
     end,
   },
 
@@ -62,6 +64,22 @@ return {
       })
     end,
   },
+
+  -- {
+  --   "nvimdev/epo.nvim",
+  --   event = "InsertEnter",
+  --   -- dev = true,
+  --   config = function()
+  --     require("epo").setup({
+  --       -- default value of options.
+  --       fuzzy = false,
+  --       -- increase this value can aviod trigger complete when delete character.
+  --       debounce = 50,
+  --       -- when completion confrim auto show a signature help floating window.
+  --       signature = false,
+  --     })
+  --   end,
+  -- },
 
   {
     "hrsh7th/nvim-cmp",

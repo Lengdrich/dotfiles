@@ -4,9 +4,10 @@
 
 local opt = vim.opt
 
-opt.clipboard = ''
+opt.clipboard = ""
 opt.relativenumber = false
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.laststatus = 3
 opt.shiftwidth = 4
 opt.tabstop = 4
+opt.signcolumn = "no"
