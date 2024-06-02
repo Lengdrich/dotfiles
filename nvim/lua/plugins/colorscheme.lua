@@ -41,12 +41,14 @@ return {
         styles = {
           comments = { italic = false },
           functions = { italic = false, bold = true },
-          variables = { italic = false, fg = grey },
+          -- variables = { italic = false, fg = grey },
+          variables = { fg = grey, italic = false },
           numbers = {},
           constants = { fg = type_color },
           parameters = { italic = false },
           keywords = { fg = purple },
           types = {},
+          -- Identifier = { fg = grey },
         },
         highlights = function(c)
           local utils = require("solarized.utils")
@@ -57,7 +59,7 @@ return {
             set_hl("@namespace", { fg = type_color }), -- modules or namespaces
             Statement = { bold = true, fg = purple },
             String = { fg = c.cyan },
-            Type = { fg = type_color },
+            Type = { fg = purple },
             Structure = { fg = type_color },
             PreProc = { fg = c.blue },
             Boolean = { fg = magenta },

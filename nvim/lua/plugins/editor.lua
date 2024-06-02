@@ -167,6 +167,7 @@ return {
         "fish",
         "cpp",
         "rust",
+        "cmake",
       },
     },
     config = function()

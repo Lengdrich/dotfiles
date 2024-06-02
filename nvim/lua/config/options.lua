@@ -8,6 +8,7 @@ opt.clipboard = ""
 opt.relativenumber = false
 opt.showmode = false -- Dont show mode since we have a statusline
 opt.laststatus = 3
+opt.expandtab = true
 opt.shiftwidth = 2
 opt.tabstop = 2
 opt.signcolumn = "no"

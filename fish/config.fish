@@ -9,9 +9,15 @@ set PATH $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/ $PATH
 set PATH $HOME/.npm-global/bin $PATH
 set PATH /usr/local/sqlite/bin/ $PATH
 set PATH /usr/local/sqlite/lib/ $PATH
-set PATH /opt/homebrew/bin/ $PATH
-set PATH $HOME/.local/nvim-macos/bin/ $PATH
-set PATH /opt/homebrew/opt/llvm/bin/ $PATH
+if test (uname) = "Darwin"
+  set PATH /opt/homebrew/bin/ $PATH
+  set PATH /opt/homebrew/opt/llvm/bin/ $PATH
+  set PATH $HOME/.local/nvim-macos/bin/ $PATH
+  set CPATH /opt/homebrew/opt/llvm/include/ $CPATH
+  set CPATH /opt/homebrew/opt/llvm/include/c++/v1/ $CPATH
+  set CPLUS_INCLUDE_PATH /opt/homebrew/opt/llvm/include/ $CPLUS_INCLUDE_PATH
+  set CPLUS_INCLUDE_PATH /opt/homebrew/opt/llvm/include/c++/v1/ $CPLUS_INCLUDE_PATH
+end
 
 # set -x RUSTUP_DIST_SERVER "https://rsproxy.cn"
 # set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
