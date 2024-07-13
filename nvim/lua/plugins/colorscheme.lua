@@ -35,37 +35,35 @@ return {
       local type_color = "#859900"
       local grey = "#839496"
       local magenta = "#d33682"
-
       require("solarized").setup({
-        transparent = false, -- enable transparent background
         styles = {
-          comments = { italic = false },
-          functions = { italic = false, bold = true },
-          -- variables = { italic = false, fg = grey },
-          variables = { fg = grey, italic = false },
-          numbers = {},
-          constants = { fg = type_color },
+          functions = { bold = true },
+          -- variables = { fg = grey },
           parameters = { italic = false },
           keywords = { fg = purple },
-          types = {},
-          -- Identifier = { fg = grey },
+          constants = { fg = magenta },
         },
         highlights = function(c)
-          local utils = require("solarized.utils")
-          local set_hl = utils.set_hl
           return {
-            -- Treesitter@namespace = { fg = "#839496" },
-            set_hl("@field", { fg = grey }),
-            set_hl("@namespace", { fg = type_color }), -- modules or namespaces
+            ["@constant.builtin.rust"] = { link = "Type" },
+            ["@lsp.type.enumMember"] = { link = "Type" },
+            ["@variable.member"] = { fg = grey },
+            ["@keyword.import"] = { fg = purple },
+            ["@module.builtin"] = { fg = type_color },
+            ["@module"] = { fg = type_color },
             Statement = { bold = true, fg = purple },
-            String = { fg = c.cyan },
-            Type = { fg = purple },
+            SpecialComment = { fg = "#586e75" },
+            Type = { fg = type_color },
             Structure = { fg = type_color },
-            PreProc = { fg = c.blue },
+            Include = { fg = type_color },
+            Define = { fg = c.blue },
+            Macro = { fg = c.blue },
+            PreCondit = { fg = purple },
             Boolean = { fg = magenta },
+            StorageClass = { fg = purple },
+            Identifier = { fg = grey },
           }
         end,
-        -- highlights = {},
         -- colors = {},
         -- theme = "neo", -- or 'neosolarized' or 'neo' for short
       })
@@ -81,7 +79,7 @@ return {
       styles = {
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
-        comments = { italic = false },
+        -- comments = { italic = false, fg = "#586e75" },
         keywords = { italic = false, bold = true, fg = "#6C71C4" },
         functions = { italic = false },
         variables = { italic = false },

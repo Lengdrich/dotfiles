@@ -7,8 +7,8 @@ local lspconfig = require("lspconfig")
 
 -- capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
 
-local capabilities =
-  vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
+-- local capabilities =
+--   vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
 
 local signs = {
   Error = " ",
@@ -16,13 +16,18 @@ local signs = {
   Info = " ",
   Hint = " ",
 }
+
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-function M._attach(client, _)
+M.capabilities =
+  vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
+
+function M._attach(client, bufnr)
   vim.opt.omnifunc = "v:lua.vim.lsp.omnifunc"
+  -- vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
   client.server_capabilities.semanticTokensProvider = nil
   local orignal = vim.notify
   local mynotify = function(msg, level, opts)
@@ -47,56 +52,56 @@ vim.diagnostic.config({
 
 lspconfig.gopls.setup({
   cmd = { "gopls", "serve" },
-  capabilities = capabilities,
-  init_options = {
-    usePlaceholders = true,
-    completeUnimported = true,
-  },
+  on_attach = M._attach,
+  capabilities = M.capabilities,
   settings = {
     gopls = {
+      usePlaceholders = true,
+      completeUnimported = true,
       analyses = {
         unusedparams = true,
       },
+      -- semanticTokens = true,
       staticcheck = true,
     },
   },
 })
 
 lspconfig.lua_ls.setup({
-  -- on_attach = function(client, _)
-  --   client.server_capabilities.semanticTokensProvider = nil
-  -- end,
-  capabilities = capabilities,
+  on_attach = M._attach,
+  capabilities = M.capabilities,
   settings = {
     Lua = {
-      -- diagnostics = {
-      --   enable = true,
-      --   globals = { 'vim' },
-      -- },
+      diagnostics = {
+        unusedLocalExclude = { "_*" },
+        globals = { "vim" },
+        disable = {
+          "luadoc-miss-see-name",
+          "undefined-field",
+        },
+      },
       runtime = {
         version = "LuaJIT",
-        path = vim.split(package.path, ";"),
+        -- path = vim.split(package.path, ';'),
       },
       workspace = {
         library = {
-          vim.env.VIMRUNTIME,
+          vim.env.VIMRUNTIME .. "/lua",
+          "${3rd}/busted/library",
+          "${3rd}/luv/library",
         },
-        checkThirdParty = false,
+        checkThirdParty = "Disable",
       },
-      -- completion = {
-      --   callSnippet = 'Replace',
-      --   keywordSnippet = 'Disable',
-      -- },
-      -- telemetry = {
-      --   enable = false,
-      -- },
+      completion = {
+        callSnippet = "Replace",
+      },
     },
   },
 })
 
 lspconfig.clangd.setup({
   cmd = { "clangd", "--background-index" },
-  -- on_attach = M._attach,
+  on_attach = M._attach,
   capabilities = M.capabilities,
   root_dir = function(fname)
     return lspconfig.util.root_pattern(unpack({
@@ -112,7 +117,9 @@ lspconfig.clangd.setup({
 })
 
 lspconfig.rust_analyzer.setup({
-  capabilities = capabilities,
+  on_attach = M._attach,
+  capabilities = M.capabilities,
+
   settings = {
     ["rust-analyzer"] = {
       imports = {

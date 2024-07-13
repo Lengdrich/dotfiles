@@ -108,7 +108,7 @@ return {
 
       require("guard").setup({
         -- the only option for the setup function
-        fmt_on_save = true,
+        -- fmt_on_save = true,
       })
 
       local exec_filetype = function(group)
