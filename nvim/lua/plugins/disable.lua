@@ -40,4 +40,7 @@ return {
   { "hrsh7th/cmp-path", enabled = false },
   { "saadparwaiz1/cmp_luasnip", enabled = false },
   { "echasnovski/mini.icons", enabled = false },
+  { "folke/ts-comments.nvim", enabled = false },
+  { "Bilal2453/luvit-meta", enabled = false },
+  { "MagicDuck/grug-far.nvim", enabled = false },
 }

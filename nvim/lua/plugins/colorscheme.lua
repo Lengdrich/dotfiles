@@ -3,27 +3,27 @@ return {
   --======================================onedark===================================
 
   --====================================gruvbox=====================================
-  {
-    "ellisonleao/gruvbox.nvim",
-    -- prioirity = 1000,
-    event = "VeryLazy",
-    config = function()
-      require("gruvbox").setup({
-        italic = {
-          strings = false,
-          comments = false,
-          operators = false,
-          folds = false,
-        },
-        -- bold = false,
-        overrides = {
-          String = { fg = "#00a000" },
-          -- StatusLine = { fg = "#1f2335" }
-        },
-      })
-      -- vim.cmd("colorscheme gruvbox")
-    end,
-  },
+  -- {
+  --   "ellisonleao/gruvbox.nvim",
+  --   -- prioirity = 1000,
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("gruvbox").setup({
+  --       italic = {
+  --         strings = false,
+  --         comments = false,
+  --         operators = false,
+  --         folds = false,
+  --       },
+  --       -- bold = false,
+  --       overrides = {
+  --         String = { fg = "#00a000" },
+  --         -- StatusLine = { fg = "#1f2335" }
+  --       },
+  --     })
+  --     -- vim.cmd("colorscheme gruvbox")
+  --   end,
+  -- },
 
   {
     "maxmx03/solarized.nvim",
@@ -70,45 +70,45 @@ return {
     end,
   },
 
-  {
-    "craftzdog/solarized-osaka.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      styles = {
-        -- Style to be applied to different syntax groups
-        -- Value is any valid attr-list value for `:help nvim_set_hl`
-        -- comments = { italic = false, fg = "#586e75" },
-        keywords = { italic = false, bold = true, fg = "#6C71C4" },
-        functions = { italic = false },
-        variables = { italic = false },
-        -- Background styles. Can be "dark", "transparent" or "normal"
-        sidebars = "transparent", -- style for sidebars, see below
-        floats = "transparent", -- style for floating windows
-      },
-      hide_inactive_statusline = false,
-      on_highlights = function(hl, c)
-        local prompt = "#2d3149"
-        hl.DiagnosticVirtualTextError = {
-          bg = c.base03,
-          fg = c.red500,
-        }
-        hl.DiagnosticVirtualTextWarn = {
-          bg = c.base03,
-          fg = c.yellow500,
-        }
-        hl.DiagnosticVirtualTextInfo = {
-          bg = c.base03,
-          fg = c.blue500,
-        }
-        hl.DiagnosticVirtualTextHint = {
-          bg = c.base03,
-          fg = c.cyan500,
-        }
-      end,
-    },
-  },
+  -- {
+  --   "craftzdog/solarized-osaka.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     transparent = true,
+  --     styles = {
+  --       -- Style to be applied to different syntax groups
+  --       -- Value is any valid attr-list value for `:help nvim_set_hl`
+  --       -- comments = { italic = false, fg = "#586e75" },
+  --       keywords = { italic = false, bold = true, fg = "#6C71C4" },
+  --       functions = { italic = false },
+  --       variables = { italic = false },
+  --       -- Background styles. Can be "dark", "transparent" or "normal"
+  --       sidebars = "transparent", -- style for sidebars, see below
+  --       floats = "transparent", -- style for floating windows
+  --     },
+  --     hide_inactive_statusline = false,
+  --     on_highlights = function(hl, c)
+  --       local prompt = "#2d3149"
+  --       hl.DiagnosticVirtualTextError = {
+  --         bg = c.base03,
+  --         fg = c.red500,
+  --       }
+  --       hl.DiagnosticVirtualTextWarn = {
+  --         bg = c.base03,
+  --         fg = c.yellow500,
+  --       }
+  --       hl.DiagnosticVirtualTextInfo = {
+  --         bg = c.base03,
+  --         fg = c.blue500,
+  --       }
+  --       hl.DiagnosticVirtualTextHint = {
+  --         bg = c.base03,
+  --         fg = c.cyan500,
+  --       }
+  --     end,
+  --   },
+  -- },
 
   --===================================LazyVim========================================
   {
