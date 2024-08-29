@@ -43,7 +43,7 @@ return {
           keywords = { fg = purple },
           constants = { fg = magenta },
         },
-        highlights = function(c)
+        on_highlights = function(colors, color)
           return {
             ["@constant.builtin.rust"] = { link = "Type" },
             ["@lsp.type.enumMember"] = { link = "Type" },
@@ -51,13 +51,14 @@ return {
             ["@keyword.import"] = { fg = purple },
             ["@module.builtin"] = { fg = type_color },
             ["@module"] = { fg = type_color },
+            ["@keyword.import.rust"] = { fg = type_color },
             Statement = { bold = true, fg = purple },
             SpecialComment = { fg = "#586e75" },
             Type = { fg = type_color },
             Structure = { fg = type_color },
-            Include = { fg = type_color },
-            Define = { fg = c.blue },
-            Macro = { fg = c.blue },
+            Include = { fg = purple },
+            Define = { fg = colors.blue },
+            Macro = { fg = colors.blue },
             PreCondit = { fg = purple },
             Boolean = { fg = magenta },
             StorageClass = { fg = purple },

@@ -11,6 +11,7 @@ clipboard-write = allow
 copy-on-select = clipboard
 clipboard-paste-protection = false
 
+##############Monaco Nerd Font#################
 # Default font
 font-family             = "Monaco Nerd Font"
 font-style              = "Regular"
@@ -26,6 +27,25 @@ font-style-bold-italic  = "Italic"
 
 font-size = 19
 # font-thicken = true
+###############################################
+
+###############################################
+# # Default font
+# font-family             = "BlexMono Nerd Font"
+# font-style              = "Regular"
+# # Bold
+# font-family-bold        = "BlexMono Nerd Font"
+# font-style-bold         = "Bold"
+# # Italic
+# font-family-italic      = "BlexMono Nerd Font"
+# font-style-italic       = "Italic"
+# # Bold and Italic
+# font-family-bold-italic = "BlexMono Nerd Font"
+# font-style-bold-italic  = "Italic"
+# 
+# font-size = 19
+
+###############################################
 
 adjust-cell-height = -1%
 window-padding-y = 0

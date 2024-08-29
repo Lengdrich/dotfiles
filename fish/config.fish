@@ -45,3 +45,4 @@ abbr -a proxy3 sh ~/dotfiles/proxy3.sh
 
 zoxide init fish | source
 starship init fish | source
+fzf --fish | source
