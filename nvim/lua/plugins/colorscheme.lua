@@ -48,8 +48,10 @@ return {
             ["@constant.builtin.rust"] = { link = "Type" },
             ["@lsp.type.enumMember"] = { link = "Type" },
             ["@variable.member"] = { fg = grey },
+            ["@variable.builtin"] = { fg = grey },
             ["@keyword.import"] = { fg = purple },
             ["@module.builtin"] = { fg = type_color },
+            ["@type.builtin"] = { fg = type_color },
             ["@module"] = { fg = type_color },
             ["@keyword.import.rust"] = { fg = type_color },
             Statement = { bold = true, fg = purple },
@@ -63,6 +65,7 @@ return {
             Boolean = { fg = magenta },
             StorageClass = { fg = purple },
             Identifier = { fg = grey },
+            Parameter = { fg = grey },
           }
         end,
         -- colors = {},

@@ -68,7 +68,15 @@ return {
     event = "InsertEnter",
     -- dev = true,
     config = function()
-      require("epo").setup()
+      require("epo").setup({
+        -- nvim-autopair compatibility
+        vim.keymap.set("i", "<cr>", function()
+          if vim.fn.pumvisible() == 1 then
+            return "<C-y>"
+          end
+          return require("mini.pairs").cr()
+        end, { expr = true, noremap = true }),
+      })
     end,
   },
 
