@@ -44,4 +44,4 @@ require("lazy").setup({
 
 -- user command
 local usercmd = vim.api.nvim_create_user_command
-usercmd("Fmtcode", "GuardFmt", {})
+usercmd("Fmtcode", "Guard fmt", {})

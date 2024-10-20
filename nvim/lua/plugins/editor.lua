@@ -163,13 +163,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      -- ensure_installed = {
-      --   "fish",
-      --   "cpp",
-      --   "c",
-      --   "rust",
-      --   "cmake",
-      -- },
+
       highlight = {
         enable = true,
         disable = function(_, buf)
@@ -181,8 +175,6 @@ return {
         end,
       },
     },
-    -- config = function()
-    --   require("nvim-treesitter.install").prefer_git = true
-    -- end,
+
   },
 }

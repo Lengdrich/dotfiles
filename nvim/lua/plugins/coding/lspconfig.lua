@@ -22,8 +22,8 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-M.capabilities =
-  vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
+-- M.capabilities =
+--   vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
 
 function M._attach(client, bufnr)
   vim.opt.omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -53,7 +53,7 @@ vim.diagnostic.config({
 lspconfig.gopls.setup({
   cmd = { "gopls", "serve" },
   on_attach = M._attach,
-  capabilities = M.capabilities,
+  -- capabilities = M.capabilities,
   settings = {
     gopls = {
       usePlaceholders = true,
@@ -69,7 +69,7 @@ lspconfig.gopls.setup({
 
 lspconfig.lua_ls.setup({
   on_attach = M._attach,
-  capabilities = M.capabilities,
+  -- capabilities = M.capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -102,7 +102,7 @@ lspconfig.lua_ls.setup({
 lspconfig.clangd.setup({
   cmd = { "clangd", "--background-index" },
   on_attach = M._attach,
-  capabilities = M.capabilities,
+  -- capabilities = M.capabilities,
   root_dir = function(fname)
     return lspconfig.util.root_pattern(unpack({
       --reorder
@@ -118,7 +118,7 @@ lspconfig.clangd.setup({
 
 lspconfig.rust_analyzer.setup({
   on_attach = M._attach,
-  capabilities = M.capabilities,
+  -- capabilities = M.capabilities,
 
   settings = {
     ["rust-analyzer"] = {
@@ -181,7 +181,7 @@ local servers = {
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
-    capabilities = capabilities,
+    -- capabilities = capabilities,
   })
 end
 

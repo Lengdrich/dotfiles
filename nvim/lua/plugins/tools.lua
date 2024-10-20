@@ -62,29 +62,6 @@ return {
       })
     end,
   },
-  -- {
-  --   "aserowy/tmux.nvim",
-  --   config = function()
-  --     return require("tmux").setup({
-  --       navigation = {
-  --         -- cycles to opposite pane while navigating into the border
-  --         cycle_navigation = false,
-  --
-  --         -- enables default keybindings (C-hjkl) for normal mode
-  --         enable_default_keybindings = true,
-  --
-  --         -- prevents unzoom tmux when navigating beyond vim border
-  --         persist_zoom = false,
-  --       },
-  --       copy_sync = {
-  --         enable = true,
-  --       },
-  --       resize = {
-  --         enable_default_keybindings = false,
-  --       },
-  --     })
-  --   end,
-  -- },
 
   {
     "nvimdev/guard.nvim",
@@ -124,35 +101,4 @@ return {
     end,
   },
 
-  -- {
-  --   "OXY2DEV/markview.nvim",
-  --   lazy = false, -- Recommended
-  --   -- ft = "markdown" -- If you decide to lazy-load anyway
-  --   config = function()
-  --     require("markview").setup({
-  --       modes = { "n", "no", "c" }, -- Change these modes
-  --       -- to what you need
-  --
-  --       hybrid_modes = { "n" }, -- Uses this feature on
-  --       -- normal mode
-  --
-  --       -- This is nice to have
-  --       callbacks = {
-  --         on_enable = function(_, win)
-  --           vim.wo[win].conceallevel = 2
-  --           vim.wo[win].conecalcursor = "c"
-  --         end,
-  --       },
-  --     })
-  --   end,
-  --
-  --   dependencies = {
-  --     -- You will not need this if you installed the
-  --     -- parsers manually
-  --     -- Or if the parsers are in your $RUNTIMEPATH
-  --     "nvim-treesitter/nvim-treesitter",
-  --
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  -- },
 }
