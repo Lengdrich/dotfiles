@@ -23,7 +23,7 @@ end
 # set -x RUSTUP_UPDATE_ROOT "https://rsproxy.cn/rustup"
 set -x TERM xterm-256color
 set -x rime_dir "$HOME/.config/fcitx/rime"
-set -x STARSHIP_CONFIG "$HOME/.config/starship/fish.toml"
+set -x STARSHIP_CONFIG "$HOME/.config/starship/starship.toml"
 
 abbr -a ls lsd
 abbr -a ll lsd -l

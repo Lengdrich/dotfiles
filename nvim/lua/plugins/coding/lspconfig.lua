@@ -1,15 +1,6 @@
 local M = {}
 local lspconfig = require("lspconfig")
 
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
-
--- capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
--- capabilities = vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
-
--- local capabilities =
---   vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
-
 local signs = {
   Error = " ",
   Warn = " ",
@@ -22,12 +13,12 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
--- M.capabilities =
---   vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
+M.capabilities =
+  vim.tbl_deep_extend("force", vim.lsp.protocol.make_client_capabilities(), require("epo").register_cap())
 
 function M._attach(client, bufnr)
   vim.opt.omnifunc = "v:lua.vim.lsp.omnifunc"
-  -- vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+  vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
   client.server_capabilities.semanticTokensProvider = nil
   local orignal = vim.notify
   local mynotify = function(msg, level, opts)
@@ -53,7 +44,7 @@ vim.diagnostic.config({
 lspconfig.gopls.setup({
   cmd = { "gopls", "serve" },
   on_attach = M._attach,
-  -- capabilities = M.capabilities,
+  capabilities = M.capabilities,
   settings = {
     gopls = {
       usePlaceholders = true,
@@ -69,7 +60,7 @@ lspconfig.gopls.setup({
 
 lspconfig.lua_ls.setup({
   on_attach = M._attach,
-  -- capabilities = M.capabilities,
+  capabilities = M.capabilities,
   settings = {
     Lua = {
       diagnostics = {
@@ -102,7 +93,7 @@ lspconfig.lua_ls.setup({
 lspconfig.clangd.setup({
   cmd = { "clangd", "--background-index" },
   on_attach = M._attach,
-  -- capabilities = M.capabilities,
+  capabilities = M.capabilities,
   root_dir = function(fname)
     return lspconfig.util.root_pattern(unpack({
       --reorder
@@ -118,7 +109,7 @@ lspconfig.clangd.setup({
 
 lspconfig.rust_analyzer.setup({
   on_attach = M._attach,
-  -- capabilities = M.capabilities,
+  capabilities = M.capabilities,
 
   settings = {
     ["rust-analyzer"] = {
@@ -151,21 +142,6 @@ lspconfig.rust_analyzer.setup({
   },
 })
 
-lspconfig.neocmake.setup({
-  cmd = { "neocmakelsp", "--stdio" },
-  file = { "cmake" },
-  root_dir = function(fname)
-    return nvim_lsp.util.find_git_ancestor(fname)
-  end,
-  single_file_support = true,
-  init_options = {
-    format = {
-      enable = true,
-    },
-    scan_cmake_in_package = true, -- default is true
-  },
-})
-
 local front_ft = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "html" }
 
 lspconfig.vuels.setup({
@@ -181,7 +157,7 @@ local servers = {
 
 for _, server in ipairs(servers) do
   lspconfig[server].setup({
-    -- capabilities = capabilities,
+    capabilities = M.capabilities,
   })
 end
 

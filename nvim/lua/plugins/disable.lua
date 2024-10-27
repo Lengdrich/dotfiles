@@ -43,4 +43,5 @@ return {
   { "folke/ts-comments.nvim", enabled = false },
   { "Bilal2453/luvit-meta", enabled = false },
   { "MagicDuck/grug-far.nvim", enabled = false },
+  { "mfussenegger/nvim-lint", enabled = false }
 }

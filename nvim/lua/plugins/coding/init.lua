@@ -63,39 +63,39 @@ return {
     end,
   },
 
-  -- {
-  --   "nvimdev/epo.nvim",
-  --   event = "InsertEnter",
-  --   -- dev = true,
-  --   config = function()
-  --     require("epo").setup({
-  --       -- nvim-autopair compatibility
-  --       vim.keymap.set("i", "<cr>", function()
-  --         if vim.fn.pumvisible() == 1 then
-  --           return "<C-y>"
-  --         end
-  --         return require("mini.pairs").cr()
-  --       end, { expr = true, noremap = true }),
-  --     })
-  --   end,
-  -- },
-
   {
-    "saghen/blink.cmp",
-    lazy = false, -- lazy loading handled internally
-
-    version = "v0.*",
-    opts = {
-      highlight = {
-        use_nvim_cmp_as_default = true,
-      },
-      nerd_font_variant = "normal",
-      keymap = {
-        accept = '<CR>'
-      }
-    },
-    dependencies = "rafamadriz/friendly-snippets",
+    "nvimdev/epo.nvim",
+    event = "InsertEnter",
+    -- dev = true,
+    config = function()
+      require("epo").setup({
+        -- nvim-autopair compatibility
+        vim.keymap.set("i", "<cr>", function()
+          if vim.fn.pumvisible() == 1 then
+            return "<C-y>"
+          end
+          return require("mini.pairs").cr()
+        end, { expr = true, noremap = true }),
+      })
+    end,
   },
+
+  -- {
+  --   "saghen/blink.cmp",
+  --   lazy = false, -- lazy loading handled internally
+  --
+  --   version = "v0.*",
+  --   opts = {
+  --     highlight = {
+  --       use_nvim_cmp_as_default = true,
+  --     },
+  --     nerd_font_variant = "normal",
+  --     keymap = {
+  --       accept = '<CR>'
+  --     }
+  --   },
+  --   dependencies = "rafamadriz/friendly-snippets",
+  -- },
 
   {
     "nvim-ts-autotag",
